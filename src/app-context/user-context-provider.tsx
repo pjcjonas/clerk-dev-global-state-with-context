@@ -9,11 +9,10 @@ export const UserContextProvider: React.FunctionComponent<Props> = (
   props: Props
 ): JSX.Element => {
   // Using react hooks, set the default state
-  const [state, setState] = useState<AppState>({})
-  
+  const [state, setState] = useState<AppState>({});
+
   // Declare the update state method that will handle the state values
   const updateState = (newState: Partial<AppState>) => {
-    console.log("AAAA");
     setState({ ...state, ...newState });
   };
 
