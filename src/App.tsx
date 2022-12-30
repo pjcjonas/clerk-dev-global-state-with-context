@@ -1,17 +1,15 @@
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
-import Button from "@mui/material/Button";
-import Stack from "@mui/material/Stack";
 import { Container, ThemeProvider, createTheme } from "@mui/material";
-import { AdminPage } from "./components/AdminPage";
-import { WelcomePage } from "./components/WelcomePage";
+import { Nav } from "./components/common/nav";
+import { MainRoutes } from "./components/common/routes";
 
 const theme = createTheme();
 
 const App: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate();
 
-  const handleClick = (location: string) => {
+  const handleClick = (location: string = "wellcome") => {
     navigate(`/${location}`);
   };
 
@@ -19,18 +17,10 @@ const App: React.FunctionComponent = (): JSX.Element => {
     <React.Fragment>
       <ThemeProvider theme={theme}>
         <Container maxWidth="sm">
-          <Stack spacing={2} direction="row">
-            <Button variant="contained" onClick={() => handleClick("")}>
-              Home
-            </Button>
-            <Button variant="contained" onClick={() => handleClick("admin")}>
-              Admin
-            </Button>
-          </Stack>
-          <Routes>
-            <Route path="/" element={<WelcomePage />} />
-            <Route path="/admin" element={<AdminPage />} />
-          </Routes>
+          <Nav handleClick={handleClick} />
+        </Container>
+        <Container maxWidth="sm">
+          <MainRoutes />
         </Container>
       </ThemeProvider>
     </React.Fragment>
