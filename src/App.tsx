@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, ThemeProvider, createTheme } from "@mui/material";
 import { Nav } from "./components/common/nav";
 import { MainRoutes } from "./components/common/routes";
@@ -12,6 +12,10 @@ const App: React.FunctionComponent = (): JSX.Element => {
   const handleClick = (location: string = "wellcome") => {
     navigate(`/${location}`);
   };
+
+  useEffect(() => {
+    handleClick()
+  }, [])
 
   return (
     <React.Fragment>
