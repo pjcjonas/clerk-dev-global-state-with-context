@@ -1,21 +1,33 @@
 import React from "react";
 
+export interface UserContract {
+  id?: number,
+  username?: string,
+  firstName?: string,
+  email?: string
+}
+
+export const DummyUser:UserContract ={
+  id: 1,
+  username: "MyUserName",
+  firstName: "John",
+  email: "john@doe.com"
+}
+
 /**
  * Application state interface
  */
 export interface AppState {
-  user?: any;
-  clerk?: any;
-  updateState?: (newState: Partial<AppState>) => void;
+  user?: UserContract;
+  updateState: (newState: Partial<AppState>) => void;
 }
 
 /**
  * Default application state
  */
 const defaultState: AppState = {
-  user: null,
-  clerk: null,
-  updateState: (newState: Partial<AppState>) => {},
+  user: {},
+  updateState: (newState?: Partial<AppState>) => {},
 };
 
 /**
