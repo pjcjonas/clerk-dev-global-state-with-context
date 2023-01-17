@@ -5,6 +5,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import { BrowserRouter } from "react-router-dom";
 
 const clerkApiKey = import.meta.env.VITE_CLERK_API_URI;
+console.log(clerkApiKey);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
@@ -13,5 +14,6 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         <App />
       </ClerkProvider>
     </BrowserRouter>
-  </React.StrictMode>
+  </React.StrictMode> 
 );
+
