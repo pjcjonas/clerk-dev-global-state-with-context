@@ -9,7 +9,7 @@ const theme = createTheme();
 const App: React.FunctionComponent = (): JSX.Element => {
   const navigate = useNavigate();
 
-  const handleClick = (location: string = "wellcome") => {
+  const handleClick = (location: string = "Welcome") => {
     navigate(`/${location}`);
   };
 
