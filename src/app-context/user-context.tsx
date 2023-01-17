@@ -7,6 +7,7 @@ export interface UserContract {
   email?: string
 }
 
+// The dummy user object used for this example
 export const DummyUser:UserContract ={
   id: 1,
   username: "MyUserName",

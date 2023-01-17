@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { AppState, UserContext } from "./user-context";
-import Clerk from "@clerk/clerk-js";
-
 
 interface Props {
   children: React.ReactNode;
@@ -14,12 +12,10 @@ export const UserContextProvider: React.FunctionComponent<Props> = (
   props: Props
 ): JSX.Element => {
   
-  const clerkFrontendApi = import.meta.env.VITE_CLERK_API_URI;
-
   /**
    * Using react hooks, set the default state
    */
-  const [state, setState] = useState<AppState>({clerk: new Clerk(clerkFrontendApi)});
+  const [state, setState] = useState({});
 
   /**
    * Declare the update state method that will handle the state values
