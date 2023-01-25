@@ -10,7 +10,7 @@ console.log(clerkApiKey);
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ClerkProvider frontendApi={clerkApiKey}>
+      <ClerkProvider publishableKey={clerkApiKey}>
         <App />
       </ClerkProvider>
     </BrowserRouter>
